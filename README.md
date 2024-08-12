@@ -103,7 +103,7 @@ title VARCHAR(255) NOT NULL, -- Title of the recipe
 description TEXT, -- Short description of the recipe
 ingredients TEXT NOT NULL, -- List of ingredients (stored as a comma-separated string)
 steps TEXT NOT NULL, -- Preparation steps (stored as a comma-separated string)
-image VARCHAR(255), -- URL or path to an image of the recipe
+image BLOB, -- URL or path to an image of the recipe
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Timestamp of when the recipe was created
 updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- Timestamp of the last update
 );
