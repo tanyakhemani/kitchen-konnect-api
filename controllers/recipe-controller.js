@@ -1,5 +1,6 @@
 import initKnex from "knex";
 import configuration from "../knexfile.js";
+import { body, param, validationResult } from "express-validator";
 const knex = initKnex(configuration);
 
 const getAllRecipes = async(req,res) => {
@@ -33,15 +34,19 @@ const getOneRecipe = async(req,res) => {
 }
 
 const createRecipe = async(req,res) => {
-    if(!req.body.title){
-        return res.status(400).json({
-            message: "Please provide recipe title in the request"
-        });
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        const extractedErrors = [];
+        errors
+            .array()
+            .map((err) => extractedErrors.push({ [err.path]: err.msg }));
+        return res.status(400).json({ errors: extractedErrors });
     }
+
     try {
         const result = await knex("recipes").insert(req.body);
         const newRecipeId = result[0];
-        const createdRecipe = await knex("recipes").where({id:newRecipeId}).first();
+        const createdRecipe = await knex("recipes").where({id: newRecipeId}).first();
         
         res.status(201).json(createdRecipe);
     } catch (error) {
@@ -52,6 +57,15 @@ const createRecipe = async(req,res) => {
 };
 
 const updateRecipe = async(req,res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        const extractedErrors = [];
+        errors
+            .array()
+            .map((err) => extractedErrors.push({ [err.path]: err.msg }));
+        return res.status(400).json({ errors: extractedErrors });
+    }
+
     try {
         const rowsUpdated = await knex("recipes")
             .where({id: req.params.id})
@@ -95,4 +109,60 @@ const deleteRecipe = async(req,res) => {
     }
 }
 
-export { getAllRecipes, getOneRecipe, createRecipe, updateRecipe, deleteRecipe };
+const validate = (method) => {
+    switch(method){
+        case "createRecipe": {
+            return [
+                body("title", "Please provide a valid title")
+                    .isString()
+                    .notEmpty()
+                    .withMessage('Title cannot be empty'),
+
+                body("description", "Please provide a valid description")
+                    .isString()
+                    .optional(),
+
+                body("ingredients", "Please provide valid ingredients")
+                    .isString()
+                    .notEmpty()
+                    .withMessage("Ingredients cannot be empty"),
+
+                body("steps", "Please provide valid steps")
+                    .isString()
+                    .notEmpty()
+                    .withMessage("Steps cannot be empty")
+            ];
+        }
+        case "updateRecipe": {
+            return [
+                param("id", "Please provide a valid recipe ID")
+                    .isNumeric()
+                    .withMessage("Recipe ID must be a number"),
+
+                body("title", "Please provide a valid title")
+                    .isString()
+                    .notEmpty()
+                    .withMessage('Title cannot be empty'),
+
+                body("description", "Please provide a valid description")
+                    .isString()
+                    .optional(),
+
+                body("ingredients", "Please provide valid ingredients")
+                    .isString()
+                    .notEmpty()
+                    .withMessage("Ingredients cannot be empty"),
+
+                body("steps", "Please provide valid steps")
+                    .isString()
+                    .notEmpty()
+                    .withMessage("Steps cannot be empty")
+            ];
+        }
+
+        default:
+            return[];
+    }
+};
+
+export { getAllRecipes, getOneRecipe, createRecipe, updateRecipe, deleteRecipe, validate };
