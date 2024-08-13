@@ -5,22 +5,13 @@ const router = express.Router();
 
 router
     .route("/recipes")
-    .get(recipeController.getAllRecipes);
-
-router
-    .route("/recipes/:id")
-    .get(recipeController.getOneRecipe);
-
-router
-    .route("/recipes")
+    .get(recipeController.getAllRecipes)
     .post(recipeController.createRecipe);
 
 router
     .route("/recipes/:id")
-    .put(recipeController.updateRecipe);
-
-router
-    .route("/recipes/:id")
+    .get(recipeController.getOneRecipe)
+    .put(recipeController.updateRecipe)
     .delete(recipeController.deleteRecipe);
 
 export default router;

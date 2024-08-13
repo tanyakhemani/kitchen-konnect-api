@@ -4,7 +4,7 @@
  */
 export function up(knex) {
   return knex.schema
-    .createTable("recipe", (table) => {
+    .createTable("recipes", (table) => {
         table.increments("id").primary();
         table.string("title").notNullable();
         table.string("description", 1000);
@@ -21,5 +21,5 @@ export function up(knex) {
  * @returns { Promise<void> }
  */
 export function down(knex) {
-  return knex.schema.dropTable("recipe");
+  return knex.schema.dropTable("recipes");
 };
