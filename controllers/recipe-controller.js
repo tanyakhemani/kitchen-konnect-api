@@ -7,7 +7,7 @@ const getAllRecipes = async(req,res) => {
         const response = await knex("recipes");
         res.status(200).json(response);
     }catch(error){
-        res.status(400).json({
+        res.status(500).json({
             message: `Error retrieving recipe list : ${error}`
         });
     }
@@ -42,7 +42,8 @@ const createRecipe = async(req,res) => {
         const result = await knex("recipes").insert(req.body);
         const newRecipeId = result[0];
         const createdRecipe = await knex("recipes").where({id:newRecipeId}).first();
-            res.status(201).json(createdRecipe);
+        
+        res.status(201).json(createdRecipe);
     } catch (error) {
         res.status(500).json({
             message: `Unable to create new user: ${error}`
@@ -51,11 +52,47 @@ const createRecipe = async(req,res) => {
 };
 
 const updateRecipe = async(req,res) => {
-    res.send({"name":"htrhrth"});
+    try {
+        const rowsUpdated = await knex("recipes")
+            .where({id: req.params.id})
+            .update(req.body);
+        
+        if(rowsUpdated === 0){
+            return res.status(404).json({
+                message: `Recipe with ID ${req.params.id} not found`
+            });
+        }
+        const updatedRecipe = await knex("recipes")
+            .where({
+                id: req.params.id
+            })
+            .first();
+
+        res.json(updatedRecipe);
+    } catch (error) {
+        res.status(500).json({
+            message: `Unable to update recipe with ID ${req.params.id}: ${error}`
+        });
+    }
 }
 
 const deleteRecipe = async(req,res) => {
-    return res.status(204).send();
+    try {
+        const rowsDeleted = await knex("recipes")
+            .where({id: req.params.id})
+            .delete();
+        
+        if(rowsDeleted === 0){
+            return res
+                .status(404)
+                .json({message : `Recipe with ID ${req.params.id} not found`});
+        }
+        res.sendStatus(204);
+    } catch (error) {
+        res.status(500).json({
+            message: `Unable to delete recipe: ${error}`
+        });
+    }
 }
 
 export { getAllRecipes, getOneRecipe, createRecipe, updateRecipe, deleteRecipe };
