@@ -10,4 +10,16 @@ const getOneRecipe = async(req,res) => {
     res.send("One Recipe, " + req.param("id"));
 }
 
-export { getAllRecipes, getOneRecipe };
+const createRecipe = async(req,res) => {
+    res.send(req.body);
+}
+
+const updateRecipe = async(req,res) => {
+    res.send({"name":"htrhrth"});
+}
+
+const deleteRecipe = async(req,res) => {
+    return res.status(204).send();
+}
+
+export { getAllRecipes, getOneRecipe, createRecipe, updateRecipe, deleteRecipe };

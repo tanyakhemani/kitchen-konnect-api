@@ -11,4 +11,16 @@ router
     .route("/recipes/:id")
     .get(recipeController.getOneRecipe);
 
+router
+    .route("/recipes")
+    .post(recipeController.createRecipe);
+
+router
+    .route("/recipes/:id")
+    .put(recipeController.updateRecipe);
+
+router
+    .route("/recipes/:id")
+    .delete(recipeController.deleteRecipe);
+
 export default router;
