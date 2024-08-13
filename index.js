@@ -1,12 +1,11 @@
 import "dotenv";
 import express from "express";
+import recipeRoutes from "./routes/recipe-routes.js";
 const app = express();
 
 const PORT = process.env.PORT || 5050;
 
-app.get("/", (req,res) => {
-    res.send("Welcome to my API");
-});
+app.use("/api", recipeRoutes)
 
 app.listen(PORT, ()=> {
     console.log(`runnning at http://localhost:${PORT}`);
