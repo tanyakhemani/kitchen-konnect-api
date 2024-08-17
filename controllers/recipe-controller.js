@@ -114,20 +114,24 @@ const validate = (method) => {
         case "createRecipe": {
             return [
                 body("title", "Please provide a valid title")
+                    .trim()
                     .isString()
                     .notEmpty()
                     .withMessage('Title cannot be empty'),
 
                 body("description", "Please provide a valid description")
+                    .trim()
                     .isString()
                     .optional(),
 
                 body("ingredients", "Please provide valid ingredients")
+                    .trim()
                     .isString()
                     .notEmpty()
                     .withMessage("Ingredients cannot be empty"),
 
                 body("steps", "Please provide valid steps")
+                    .trim()
                     .isString()
                     .notEmpty()
                     .withMessage("Steps cannot be empty")
@@ -140,20 +144,24 @@ const validate = (method) => {
                     .withMessage("Recipe ID must be a number"),
 
                 body("title", "Please provide a valid title")
+                    .trim()
                     .isString()
                     .notEmpty()
                     .withMessage('Title cannot be empty'),
 
                 body("description", "Please provide a valid description")
+                    .trim()
                     .isString()
                     .optional(),
 
                 body("ingredients", "Please provide valid ingredients")
+                    .trim()
                     .isString()
                     .notEmpty()
                     .withMessage("Ingredients cannot be empty"),
 
                 body("steps", "Please provide valid steps")
+                    .trim()
                     .isString()
                     .notEmpty()
                     .withMessage("Steps cannot be empty")
