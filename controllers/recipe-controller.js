@@ -93,9 +93,20 @@ const updateRecipe = async (req, res) => {
   }
 
   try {
+    const fileBuffer = req.file.buffer; // File data as a Buffer
+    const fileName = req.file.originalname; // Original file name
+    const splitFileName = fileName.split(".");
+    const fileType = splitFileName[splitFileName.length - 1];
+
+    const reqBodyWithImg = {
+      ...req.body,
+      image: fileBuffer,
+      image_type: fileType,
+    };
+
     const rowsUpdated = await knex("recipes")
       .where({ id: req.params.id })
-      .update(req.body);
+      .update(reqBodyWithImg);
 
     if (rowsUpdated === 0) {
       return res.status(404).json({
@@ -108,9 +119,9 @@ const updateRecipe = async (req, res) => {
       })
       .first();
 
-    const updatedRecipeWithConvertedImg = convertImage(updateRecipe);
+    const updatedRecipeWithImg = convertImage(updatedRecipe);
 
-    res.json(updatedRecipeWithConvertedImg);
+    res.json(updatedRecipeWithImg);
   } catch (error) {
     res.status(500).json({
       message: `Unable to update recipe with ID ${req.params.id}: ${error}`,
@@ -146,12 +157,13 @@ const getOneImage = async (req, res) => {
         message: `Recipe with ID ${req.params.id} not found`,
       });
     }
+
     const imageBase64 = response?.image
       ? response.image.toString("base64")
       : null;
 
     res.json({
-      id: response.id,
+      image_type: recipe.image_type,
       image: imageBase64,
     });
   } catch (error) {

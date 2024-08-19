@@ -20,7 +20,11 @@ router
 router
   .route("/recipes/:id")
   .get(recipeController.getOneRecipe)
-  .put(recipeController.validate("updateRecipe"), recipeController.updateRecipe)
+  .put(
+    upload.single("image"),
+    recipeController.validate("updateRecipe"),
+    recipeController.updateRecipe
+  )
   .delete(recipeController.deleteRecipe);
 
 router.route("/recipes/images/:id").get(recipeController.getOneImage);
