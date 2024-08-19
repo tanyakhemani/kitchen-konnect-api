@@ -150,22 +150,25 @@ const deleteRecipe = async (req, res) => {
 
 const getOneImage = async (req, res) => {
   try {
-    const response = await knex("recipes").where({ id: req.params.id }).first();
+    const recipe = await knex("recipes").where({ id: req.params.id }).first();
 
-    if (!response) {
+    if (!recipe) {
       return res.status(404).json({
         message: `Recipe with ID ${req.params.id} not found`,
       });
     }
 
-    const imageBase64 = response?.image
-      ? response.image.toString("base64")
-      : null;
+    let imageData = null;
 
-    res.json({
-      image_type: recipe.image_type,
-      image: imageBase64,
-    });
+    if (recipe.image) {
+      const imageBase64 = recipe.image.toString("base64");
+
+      imageData = {
+        image: imageBase64,
+        image_type: recipe.image_type,
+      };
+    }
+    res.json(imageData);
   } catch (error) {
     res.status(500).json({
       message: `Unable to retrieve recipe data with the ID ${req.params.id}`,

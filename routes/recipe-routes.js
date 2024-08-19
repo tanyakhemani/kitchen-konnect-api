@@ -27,6 +27,6 @@ router
   )
   .delete(recipeController.deleteRecipe);
 
-router.route("/recipes/images/:id").get(recipeController.getOneImage);
+router.route("/recipes/:id/images").get(recipeController.getOneImage);
 
 export default router;
