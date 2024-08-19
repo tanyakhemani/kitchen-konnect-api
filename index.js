@@ -8,8 +8,9 @@ const PORT = process.env.PORT || 5050;
 
 app.use(cors());
 app.use(express.json());
+
 app.use("/api", recipeRoutes);
 
-app.listen(PORT, ()=> {
-    console.log(`runnning at http://localhost:${PORT}`);
+app.listen(PORT, () => {
+  console.log(`runnning at http://localhost:${PORT}`);
 });
