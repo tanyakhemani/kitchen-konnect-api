@@ -8,7 +8,8 @@ const getAllRecipes = async (req, res) => {
     const response = await knex("recipes").select(
       "recipes.id",
       "recipes.title",
-      "recipes.description"
+      "recipes.description",
+      "recipes.likes"
     );
 
     res.status(200).json(response);
