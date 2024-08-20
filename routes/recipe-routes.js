@@ -29,4 +29,6 @@ router
 
 router.route("/recipes/:id/images").get(recipeController.getOneImage);
 
+router.route("/recipes/:id/likes").put(recipeController.updateRecipeLikes);
+
 export default router;

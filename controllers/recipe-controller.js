@@ -9,6 +9,8 @@ const getAllRecipes = async (req, res) => {
       "recipes.id",
       "recipes.title",
       "recipes.description",
+      "recipes.ingredients",
+      "recipes.steps",
       "recipes.likes"
     );
 
@@ -22,7 +24,17 @@ const getAllRecipes = async (req, res) => {
 
 const getOneRecipe = async (req, res) => {
   try {
-    const response = await knex("recipes").where({ id: req.params.id }).first();
+    const response = await knex("recipes")
+      .select(
+        "recipes.id",
+        "recipes.title",
+        "recipes.description",
+        "recipes.ingredients",
+        "recipes.steps",
+        "recipes.likes"
+      )
+      .where({ id: req.params.id })
+      .first();
 
     if (!response) {
       return res.status(404).json({
@@ -94,16 +106,24 @@ const updateRecipe = async (req, res) => {
   }
 
   try {
-    const fileBuffer = req.file.buffer; // File data as a Buffer
-    const fileName = req.file.originalname; // Original file name
-    const splitFileName = fileName.split(".");
-    const fileType = splitFileName[splitFileName.length - 1];
+    const recipe = await knex("recipes").where({ id: req.params.id }).first();
 
     const reqBodyWithImg = {
       ...req.body,
-      image: fileBuffer,
-      image_type: fileType,
     };
+
+    if (req.file) {
+      const fileBuffer = req.file.buffer; // File data as a Buffer
+      const fileName = req.file.originalname; // Original file name
+      const splitFileName = fileName.split(".");
+      const fileType = splitFileName[splitFileName.length - 1];
+
+      reqBodyWithImg.image = fileBuffer;
+      reqBodyWithImg.image_type = fileType;
+    } else {
+      reqBodyWithImg.image = recipe.image;
+      reqBodyWithImg.image_type = recipe.image_type;
+    }
 
     const rowsUpdated = await knex("recipes")
       .where({ id: req.params.id })
@@ -171,6 +191,30 @@ const getOneImage = async (req, res) => {
     }
     res.json(imageData);
   } catch (error) {
+    res.status(500).json({
+      message: `Unable to retrieve recipe data with the ID ${req.params.id}`,
+    });
+  }
+};
+
+const updateRecipeLikes = async (req, res) => {
+  try {
+    const recipe = await knex("recipes").where({ id: req.params.id }).first();
+
+    if (!recipe) {
+      return res.status(404).json({
+        message: `Recipe with ID ${req.params.id} not found`,
+      });
+    }
+
+    const likes = req.body.likes;
+    const result = await knex("recipes")
+      .where({ id: req.params.id })
+      .update({ ...recipe, likes });
+
+    res.json(result);
+  } catch (error) {
+    console.log(error);
     res.status(500).json({
       message: `Unable to retrieve recipe data with the ID ${req.params.id}`,
     });
@@ -248,5 +292,6 @@ export {
   updateRecipe,
   deleteRecipe,
   getOneImage,
+  updateRecipeLikes,
   validate,
 };
