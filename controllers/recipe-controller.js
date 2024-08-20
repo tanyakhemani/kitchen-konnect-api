@@ -58,16 +58,21 @@ const createRecipe = async (req, res) => {
   }
 
   try {
-    const fileBuffer = req.file.buffer; // File data as a Buffer
-    const fileName = req.file.originalname; // Original file name
-    const splitFileName = fileName.split(".");
-    const fileType = splitFileName[splitFileName.length - 1];
-
     const reqBodyWithImg = {
       ...req.body,
-      image: fileBuffer,
-      image_type: fileType,
+      image: null,
+      image_type: null,
     };
+
+    if (req.file) {
+      const fileBuffer = req.file.buffer; // File data as a Buffer
+      const fileName = req.file.originalname; // Original file name
+      const splitFileName = fileName.split(".");
+      const fileType = splitFileName[splitFileName.length - 1];
+
+      reqBodyWithImg.image = fileBuffer;
+      reqBodyWithImg.image_type = fileType;
+    }
 
     const result = await knex("recipes").insert(reqBodyWithImg);
     const newRecipeId = result[0];
