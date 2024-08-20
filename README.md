@@ -1,5 +1,7 @@
 # Kitchen-Konnect
 
+kitchen-konnect UI repository link: https://github.com/tanyakhemani/kitchen-konnect
+
 ## App Setup
 
 1. Install dependencies
