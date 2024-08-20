@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "6e276c16-fcd7-4f4b-b888-e1d9a9fd7cb1",
+		"name": "kitchen-konnect",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8850253"
+	},
+	"item": [
+		{
+			"name": "getAllRecipes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"recipes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getAllRecipes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/recipes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"recipes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"Spaghetti Carbonara\",\n        \"description\": \"Classic Italian pasta dish with eggs, cheese, pancetta, and pepper.\",\n        \"ingredients\": \"Spaghetti, Eggs, Parmesan cheese, Pancetta, Black pepper, Salt\",\n        \"steps\": \"1. Cook spaghetti. 2. Cook pancetta. 3. Mix eggs with cheese. 4. Combine pasta, pancetta, and egg mixture. 5. Season with pepper and salt.\",\n        \"image\": null\n    },\n    {\n        \"id\": 2,\n        \"title\": \"Chicken Alfredo\",\n        \"description\": \"Creamy Alfredo sauce with grilled chicken over fettuccine pasta.\",\n        \"ingredients\": \"Fettuccine, Chicken breast, Heavy cream, Parmesan cheese, Garlic, Butter, Salt, Black pepper\",\n        \"steps\": \"1. Cook fettuccine. 2. Grill chicken. 3. Make Alfredo sauce with cream, cheese, butter, and garlic. 4. Combine with pasta and chicken. 5. Season to taste.\",\n        \"image\": null\n    },\n    {\n        \"id\": 3,\n        \"title\": \"Caesar Salad\",\n        \"description\": \"Fresh romaine lettuce with Caesar dressing, croutons, and Parmesan cheese.\",\n        \"ingredients\": \"Romaine lettuce, Caesar dressing, Croutons, Parmesan cheese, Lemon juice, Garlic, Olive oil\",\n        \"steps\": \"1. Toss lettuce with Caesar dressing. 2. Add croutons and Parmesan cheese. 3. Drizzle with lemon juice and olive oil.\",\n        \"image\": null\n    },\n    {\n        \"id\": 4,\n        \"title\": \"Beef Tacos\",\n        \"description\": \"Ground beef tacos with seasoned meat and your favorite toppings.\",\n        \"ingredients\": \"Ground beef, Taco seasoning, Taco shells, Lettuce, Tomato, Cheddar cheese, Sour cream\",\n        \"steps\": \"1. Cook ground beef with taco seasoning. 2. Fill taco shells with beef. 3. Top with lettuce, tomato, cheese, and sour cream.\",\n        \"image\": null\n    },\n    {\n        \"id\": 5,\n        \"title\": \"Vegetable Stir Fry\",\n        \"description\": \"Stir-fried vegetables in a savory sauce served over rice.\",\n        \"ingredients\": \"Bell peppers, Broccoli, Carrots, Soy sauce, Garlic, Ginger, Rice\",\n        \"steps\": \"1. Cook rice. 2. Stir-fry vegetables with garlic and ginger. 3. Add soy sauce and cook until vegetables are tender. 4. Serve over rice.\",\n        \"image\": null\n    },\n    {\n        \"id\": 6,\n        \"title\": \"Pancakes\",\n        \"description\": \"Fluffy pancakes served with maple syrup and fresh fruit.\",\n        \"ingredients\": \"Flour, Eggs, Milk, Baking powder, Sugar, Butter, Maple syrup, Fresh fruit\",\n        \"steps\": \"1. Mix dry ingredients. 2. Add eggs, milk, and melted butter. 3. Cook on a griddle. 4. Serve with syrup and fruit.\",\n        \"image\": null\n    },\n    {\n        \"id\": 7,\n        \"title\": \"Greek Salad\",\n        \"description\": \"A fresh salad with cucumbers, tomatoes, olives, and feta cheese.\",\n        \"ingredients\": \"Cucumbers, Tomatoes, Kalamata olives, Feta cheese, Red onion, Olive oil, Oregano, Lemon juice\",\n        \"steps\": \"1. Chop vegetables. 2. Combine with olives and feta. 3. Dress with olive oil, lemon juice, and oregano.\",\n        \"image\": null\n    },\n    {\n        \"id\": 8,\n        \"title\": \"Chicken Soup\",\n        \"description\": \"Comforting chicken soup with vegetables and noodles.\",\n        \"ingredients\": \"Chicken breast, Carrots, Celery, Onion, Chicken broth, Egg noodles, Salt, Black pepper\",\n        \"steps\": \"1. Cook chicken and vegetables in broth. 2. Add egg noodles and cook until tender. 3. Season with salt and pepper.\",\n        \"image\": null\n    },\n    {\n        \"id\": 9,\n        \"title\": \"Lasagna\",\n        \"description\": \"Layers of pasta, meat sauce, and cheese baked to perfection.\",\n        \"ingredients\": \"Lasagna noodles, Ground beef, Marinara sauce, Ricotta cheese, Mozzarella cheese, Parmesan cheese, Onion, Garlic\",\n        \"steps\": \"1. Cook meat with onion and garlic. 2. Layer noodles with meat sauce and cheeses. 3. Bake until bubbly and golden.\",\n        \"image\": null\n    },\n    {\n        \"id\": 10,\n        \"title\": \"BBQ Ribs\",\n        \"description\": \"Tender ribs coated in BBQ sauce and slow-cooked to perfection.\",\n        \"ingredients\": \"Pork ribs, BBQ sauce, Brown sugar, Garlic powder, Onion powder, Paprika, Salt, Black pepper\",\n        \"steps\": \"1. Rub ribs with spices. 2. Bake or grill with BBQ sauce. 3. Cook until tender and caramelized.\",\n        \"image\": null\n    },\n    {\n        \"id\": 11,\n        \"title\": \"Margarita Pizza\",\n        \"description\": \"Classic pizza with tomato sauce, mozzarella cheese, and fresh basil.\",\n        \"ingredients\": \"Pizza dough, Tomato sauce, Mozzarella cheese, Fresh basil, Olive oil, Salt\",\n        \"steps\": \"1. Spread tomato sauce on dough. 2. Add cheese and basil. 3. Bake until crust is crispy and cheese is melted.\",\n        \"image\": null\n    },\n    {\n        \"id\": 12,\n        \"title\": \"Buffalo Chicken Dip\",\n        \"description\": \"Spicy buffalo chicken dip with cream cheese and shredded chicken.\",\n        \"ingredients\": \"Chicken breast, Cream cheese, Buffalo sauce, Cheddar cheese, Ranch dressing, Celery\",\n        \"steps\": \"1. Mix shredded chicken with cream cheese, buffalo sauce, and ranch dressing. 2. Top with cheddar cheese and bake until bubbly.\",\n        \"image\": null\n    },\n    {\n        \"id\": 13,\n        \"title\": \"Enchiladas\",\n        \"description\": \"Corn tortillas filled with chicken and cheese, topped with enchilada sauce.\",\n        \"ingredients\": \"Corn tortillas, Chicken, Cheese, Enchilada sauce, Onion, Garlic, Cumin\",\n        \"steps\": \"1. Fill tortillas with chicken and cheese. 2. Roll and place in a baking dish. 3. Cover with sauce and bake.\",\n        \"image\": null\n    },\n    {\n        \"id\": 14,\n        \"title\": \"Chili Con Carne\",\n        \"description\": \"A hearty and spicy beef chili with beans and vegetables.\",\n        \"ingredients\": \"Ground beef, Kidney beans, Black beans, Tomatoes, Onion, Garlic, Chili powder, Cumin, Salt, Black pepper\",\n        \"steps\": \"1. Brown the beef with onions and garlic. 2. Add beans, tomatoes, and spices. 3. Simmer until flavors meld.\",\n        \"image\": null\n    },\n    {\n        \"id\": 15,\n        \"title\": \"Falafel\",\n        \"description\": \"Crispy chickpea patties served with tahini sauce and pita bread.\",\n        \"ingredients\": \"Chickpeas, Garlic, Onion, Parsley, Cumin, Coriander, Baking powder, Salt, Black pepper, Oil\",\n        \"steps\": \"1. Blend chickpeas with spices and herbs. 2. Form into patties and fry. 3. Serve with tahini sauce and pita.\",\n        \"image\": null\n    },\n    {\n        \"id\": 16,\n        \"title\": \"Tiramisu\",\n        \"description\": \"A classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cheese.\",\n        \"ingredients\": \"Ladyfingers, Mascarpone cheese, Eggs, Sugar, Coffee, Cocoa powder, Marsala wine\",\n        \"steps\": \"1. Dip ladyfingers in coffee. 2. Layer with mascarpone mixture. 3. Chill and dust with cocoa powder before serving.\",\n        \"image\": null\n    },\n    {\n        \"id\": 17,\n        \"title\": \"Greek Gyro\",\n        \"description\": \"Pita bread filled with spiced meat, tzatziki sauce, and fresh vegetables.\",\n        \"ingredients\": \"Pita bread, Pork or chicken, Tzatziki sauce, Tomatoes, Onion, Cucumber, Lettuce, Oregano\",\n        \"steps\": \"1. Cook spiced meat. 2. Warm pita bread. 3. Fill with meat, tzatziki, and vegetables.\",\n        \"image\": null\n    },\n    {\n        \"id\": 18,\n        \"title\": \"Lemon Bars\",\n        \"description\": \"Tangy lemon bars with a buttery shortbread crust.\",\n        \"ingredients\": \"Flour, Butter, Sugar, Eggs, Lemon juice, Lemon zest, Baking powder\",\n        \"steps\": \"1. Prepare shortbread crust and bake. 2. Make lemon filling and pour over crust. 3. Bake until set and cool before cutting.\",\n        \"image\": null\n    },\n    {\n        \"id\": 19,\n        \"title\": \"Mushroom Risotto\",\n        \"description\": \"Creamy risotto with sautéed mushrooms and Parmesan cheese.\",\n        \"ingredients\": \"Arborio rice, Mushrooms, Onion, Garlic, Vegetable broth, White wine, Parmesan cheese, Butter, Olive oil\",\n        \"steps\": \"1. Sauté mushrooms and onions. 2. Cook rice with broth and wine. 3. Stir in mushrooms, cheese, and butter.\",\n        \"image\": null\n    },\n    {\n        \"id\": 20,\n        \"title\": \"Pesto Pasta\",\n        \"description\": \"Pasta tossed with fresh basil pesto and Parmesan cheese.\",\n        \"ingredients\": \"Pasta, Basil, Pine nuts, Garlic, Parmesan cheese, Olive oil, Salt, Black pepper\",\n        \"steps\": \"1. Cook pasta. 2. Blend basil, pine nuts, garlic, and cheese with olive oil. 3. Toss pasta with pesto.\",\n        \"image\": null\n    },\n    {\n        \"id\": 21,\n        \"title\": \"Cornbread\",\n        \"description\": \"Moist and crumbly cornbread with a touch of honey.\",\n        \"ingredients\": \"Cornmeal, Flour, Sugar, Baking powder, Eggs, Milk, Butter, Honey\",\n        \"steps\": \"1. Mix dry ingredients. 2. Add wet ingredients and stir. 3. Bake until golden and a toothpick comes out clean.\",\n        \"image\": null\n    },\n    {\n        \"id\": 22,\n        \"title\": \"Beef Stroganoff\",\n        \"description\": \"Tender beef in a creamy mushroom sauce, served over egg noodles.\",\n        \"ingredients\": \"Beef sirloin, Mushrooms, Onion, Garlic, Sour cream, Beef broth, Egg noodles, Flour, Butter\",\n        \"steps\": \"1. Cook beef with onions and mushrooms. 2. Add broth and simmer. 3. Stir in sour cream and serve over noodles.\",\n        \"image\": null\n    },\n    {\n        \"id\": 23,\n        \"title\": \"Stuffed Bell Peppers\",\n        \"description\": \"Bell peppers stuffed with a mixture of ground beef, rice, and vegetables.\",\n        \"ingredients\": \"Bell peppers, Ground beef, Rice, Onion, Tomato sauce, Garlic, Cheese, Salt, Black pepper\",\n        \"steps\": \"1. Cook beef and rice mixture. 2. Stuff into bell peppers. 3. Top with cheese and bake.\",\n        \"image\": null\n    },\n    {\n        \"id\": 24,\n        \"title\": \"Egg Drop Soup\",\n        \"description\": \"A simple and comforting Chinese soup with egg ribbons and scallions.\",\n        \"ingredients\": \"Chicken broth, Eggs, Cornstarch, Soy sauce, Scallions, Salt, White pepper\",\n        \"steps\": \"1. Heat broth with cornstarch. 2. Slowly stir in beaten eggs to create ribbons. 3. Season with soy sauce, salt, and pepper. 4. Garnish with scallions.\",\n        \"image\": null\n    },\n    {\n        \"id\": 25,\n        \"title\": \"Shrimp Scampi\",\n        \"description\": \"Garlic butter shrimp served over pasta with a squeeze of lemon.\",\n        \"ingredients\": \"Shrimp, Garlic, Butter, Lemon juice, White wine, Parsley, Pasta\",\n        \"steps\": \"1. Cook pasta. 2. Sauté shrimp with garlic and butter. 3. Add white wine and lemon juice. 4. Toss shrimp with pasta and parsley.\",\n        \"image\": null\n    },\n    {\n        \"id\": 26,\n        \"title\": \"Quiche Lorraine\",\n        \"description\": \"Savory quiche with bacon, cheese, and a creamy custard filling.\",\n        \"ingredients\": \"Pie crust, Bacon, Eggs, Heavy cream, Swiss cheese, Onion, Nutmeg, Salt, Black pepper\",\n        \"steps\": \"1. Cook bacon and set aside. 2. Mix eggs, cream, cheese, and seasonings. 3. Add bacon and pour into crust. 4. Bake until set and golden.\",\n        \"image\": null\n    },\n    {\n        \"id\": 27,\n        \"title\": \"Apple Pie\",\n        \"description\": \"Classic apple pie with a flaky crust and spiced apple filling.\",\n        \"ingredients\": \"Pie crust, Apples, Sugar, Cinnamon, Nutmeg, Lemon juice, Butter\",\n        \"steps\": \"1. Prepare pie crust and place in pan. 2. Toss apples with sugar, cinnamon, nutmeg, and lemon juice. 3. Fill pie crust and top with butter. 4. Bake until crust is golden and filling is bubbly.\",\n        \"image\": null\n    },\n    {\n        \"id\": 28,\n        \"title\": \"Pad Thai\",\n        \"description\": \"Stir-fried rice noodles with shrimp, peanuts, and a tangy sauce.\",\n        \"ingredients\": \"Rice noodles, Shrimp, Peanuts, Eggs, Bean sprouts, Green onions, Tamarind paste, Fish sauce, Sugar\",\n        \"steps\": \"1. Soak noodles. 2. Stir-fry shrimp and vegetables. 3. Add noodles and sauce. 4. Toss with peanuts and garnish.\",\n        \"image\": null\n    },\n    {\n        \"id\": 29,\n        \"title\": \"Chicken Parmesan\",\n        \"description\": \"Breaded chicken breasts baked with marinara sauce and mozzarella cheese.\",\n        \"ingredients\": \"Chicken breasts, Breadcrumbs, Parmesan cheese, Marinara sauce, Mozzarella cheese, Eggs, Flour, Olive oil\",\n        \"steps\": \"1. Bread chicken breasts and fry. 2. Top with marinara and cheese. 3. Bake until cheese is melted and bubbly.\",\n        \"image\": null\n    },\n    {\n        \"id\": 30,\n        \"title\": \"Tom Yum Soup\",\n        \"description\": \"Spicy Thai soup with shrimp, mushrooms, and aromatic herbs.\",\n        \"ingredients\": \"Shrimp, Mushrooms, Lemongrass, Kaffir lime leaves, Fish sauce, Lime juice, Thai chili, Cilantro\",\n        \"steps\": \"1. Simmer broth with lemongrass and lime leaves. 2. Add shrimp and mushrooms. 3. Season with fish sauce, lime juice, and chili. 4. Garnish with cilantro.\",\n        \"image\": null\n    },\n    {\n        \"id\": 31,\n        \"title\": \"Chicken Kiev\",\n        \"description\": \"Breaded chicken breasts stuffed with garlic herb butter.\",\n        \"ingredients\": \"Chicken breasts, Garlic butter, Breadcrumbs, Eggs, Flour, Parsley, Garlic\",\n        \"steps\": \"1. Stuff chicken with garlic butter. 2. Coat with flour, eggs, and breadcrumbs. 3. Bake until golden and cooked through.\",\n        \"image\": null\n    },\n    {\n        \"id\": 32,\n        \"title\": \"Crispy Brussels Sprouts\",\n        \"description\": \"Roasted Brussels sprouts with a crispy exterior and tender inside.\",\n        \"ingredients\": \"Brussels sprouts, Olive oil, Salt, Black pepper, Parmesan cheese\",\n        \"steps\": \"1. Toss Brussels sprouts with olive oil, salt, and pepper. 2. Roast until crispy. 3. Top with Parmesan cheese.\",\n        \"image\": null\n    },\n    {\n        \"id\": 33,\n        \"title\": \"Pork Schnitzel\",\n        \"description\": \"Breaded and fried pork cutlets served with lemon wedges.\",\n        \"ingredients\": \"Pork cutlets, Flour, Eggs, Breadcrumbs, Lemon, Oil, Salt, Black pepper\",\n        \"steps\": \"1. Bread pork cutlets. 2. Fry until golden and cooked through. 3. Serve with lemon wedges.\",\n        \"image\": null\n    },\n    {\n        \"id\": 34,\n        \"title\": \"Clam Chowder\",\n        \"description\": \"Creamy New England clam chowder with potatoes and clams.\",\n        \"ingredients\": \"Clams, Potatoes, Onion, Celery, Heavy cream, Chicken broth, Butter, Flour\",\n        \"steps\": \"1. Cook onions and celery. 2. Add potatoes and broth. 3. Stir in clams and cream. 4. Simmer until thickened.\",\n        \"image\": null\n    },\n    {\n        \"id\": 35,\n        \"title\": \"Vegetarian Chili\",\n        \"description\": \"Hearty chili made with beans, vegetables, and spices.\",\n        \"ingredients\": \"Kidney beans, Black beans, Tomatoes, Bell peppers, Onion, Garlic, Chili powder, Cumin, Salt, Black pepper\",\n        \"steps\": \"1. Cook onions and peppers. 2. Add beans, tomatoes, and spices. 3. Simmer until flavors meld.\",\n        \"image\": null\n    },\n    {\n        \"id\": 36,\n        \"title\": \"Pork Tacos\",\n        \"description\": \"Soft tacos filled with seasoned pork and fresh toppings.\",\n        \"ingredients\": \"Pork shoulder, Taco seasoning, Taco shells, Salsa, Cilantro, Lime, Onion\",\n        \"steps\": \"1. Cook pork with seasoning. 2. Fill taco shells with pork. 3. Top with salsa, cilantro, lime, and onion.\",\n        \"image\": null\n    },\n    {\n        \"id\": 37,\n        \"title\": \"Spinach Artichoke Dip\",\n        \"description\": \"Creamy dip with spinach, artichokes, and cheese.\",\n        \"ingredients\": \"Spinach, Artichoke hearts, Cream cheese, Sour cream, Parmesan cheese, Mozzarella cheese, Garlic\",\n        \"steps\": \"1. Mix spinach, artichokes, and cheeses. 2. Bake until bubbly and golden.\",\n        \"image\": null\n    },\n    {\n        \"id\": 38,\n        \"title\": \"Pumpkin Soup\",\n        \"description\": \"Smooth and creamy pumpkin soup with a hint of spice.\",\n        \"ingredients\": \"Pumpkin, Onion, Garlic, Vegetable broth, Cream, Nutmeg, Cinnamon, Salt, Black pepper\",\n        \"steps\": \"1. Cook onion and garlic. 2. Add pumpkin and broth. 3. Puree and stir in cream and spices.\",\n        \"image\": null\n    },\n    {\n        \"id\": 39,\n        \"title\": \"Chicken Caesar Wrap\",\n        \"description\": \"Grilled chicken with Caesar dressing and lettuce in a wrap.\",\n        \"ingredients\": \"Chicken breast, Caesar dressing, Romaine lettuce, Tortilla wraps, Parmesan cheese\",\n        \"steps\": \"1. Grill chicken and slice. 2. Toss with Caesar dressing. 3. Wrap in tortillas with lettuce and cheese.\",\n        \"image\": null\n    },\n    {\n        \"id\": 40,\n        \"title\": \"Chicken Pot Pie\",\n        \"description\": \"Savory pie filled with chicken, vegetables, and a creamy sauce.\",\n        \"ingredients\": \"Chicken, Carrots, Peas, Onion, Celery, Chicken broth, Heavy cream, Pie crust, Flour\",\n        \"steps\": \"1. Cook chicken and vegetables. 2. Make a creamy sauce. 3. Fill pie crust and bake.\",\n        \"image\": null\n    },\n    {\n        \"id\": 41,\n        \"title\": \"Chicken Fajitas\",\n        \"description\": \"Sizzling chicken with bell peppers and onions, served with tortillas.\",\n        \"ingredients\": \"Chicken breast, Bell peppers, Onion, Fajita seasoning, Tortillas, Lime, Cilantro\",\n        \"steps\": \"1. Cook chicken and vegetables with seasoning. 2. Serve with tortillas and lime wedges.\",\n        \"image\": null\n    },\n    {\n        \"id\": 42,\n        \"title\": \"Ratatouille\",\n        \"description\": \"French vegetable stew with zucchini, eggplant, and tomatoes.\",\n        \"ingredients\": \"Zucchini, Eggplant, Tomatoes, Bell peppers, Onion, Garlic, Olive oil, Herbs\",\n        \"steps\": \"1. Sauté vegetables with garlic and herbs. 2. Simmer until tender.\",\n        \"image\": null\n    },\n    {\n        \"id\": 43,\n        \"title\": \"Baked Ziti\",\n        \"description\": \"Pasta baked with marinara sauce and melted cheese.\",\n        \"ingredients\": \"Ziti pasta, Marinara sauce, Ricotta cheese, Mozzarella cheese, Parmesan cheese, Egg, Garlic\",\n        \"steps\": \"1. Cook pasta and mix with marinara and cheeses. 2. Bake until bubbly and golden.\",\n        \"image\": null\n    },\n    {\n        \"id\": 44,\n        \"title\": \"Beef Wellington\",\n        \"description\": \"Beef tenderloin wrapped in puff pastry with a mushroom duxelles.\",\n        \"ingredients\": \"Beef tenderloin, Puff pastry, Mushrooms, Prosciutto, Dijon mustard, Egg yolk\",\n        \"steps\": \"1. Sear beef and prepare mushroom duxelles. 2. Wrap beef in prosciutto and duxelles, then puff pastry. 3. Bake until pastry is golden and beef is cooked.\",\n        \"image\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getOneRecipe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/recipes/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"recipes",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getOneRecipe",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/recipes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"recipes",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"title\": \"Spaghetti Carbonara\",\n    \"description\": \"Classic Italian pasta dish with eggs, cheese, pancetta, and pepper.\",\n    \"ingredients\": \"Spaghetti, Eggs, Parmesan cheese, Pancetta, Black pepper, Salt\",\n    \"steps\": \"1. Cook spaghetti. 2. Cook pancetta. 3. Mix eggs with cheese. 4. Combine pasta, pancetta, and egg mixture. 5. Season with pepper and salt.\",\n    \"image\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "createRecipe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 47,\n  \"title\": \"Mushroom Risotto\",\n  \"description\": \"Creamy risotto with sautéed mushrooms and Parmesan cheese.\",\n  \"ingredients\": \"Arborio rice, Mushrooms, Onion, Garlic, Vegetable broth, White wine, Parmesan cheese, Butter, Olive oil, Salt, Black pepper\",\n  \"steps\": \"1. Sauté onions and garlic in olive oil. 2. Add mushrooms and cook until tender. 3. Stir in Arborio rice and cook for a few minutes. 4. Deglaze with white wine. 5. Gradually add vegetable broth, stirring constantly, until rice is creamy and cooked through. 6. Stir in Parmesan cheese and butter. Season with salt and pepper.\",\n  \"image\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"recipes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "createRecipe",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 47,\n  \"title\": \"Mushroom Risotto\",\n  \"description\": \"Creamy risotto with sautéed mushrooms and Parmesan cheese.\",\n  \"ingredients\": \"Arborio rice, Mushrooms, Onion, Garlic, Vegetable broth, White wine, Parmesan cheese, Butter, Olive oil, Salt, Black pepper\",\n  \"steps\": \"1. Sauté onions and garlic in olive oil. 2. Add mushrooms and cook until tender. 3. Stir in Arborio rice and cook for a few minutes. 4. Deglaze with white wine. 5. Gradually add vegetable broth, stirring constantly, until rice is creamy and cooked through. 6. Stir in Parmesan cheese and butter. Season with salt and pepper.\",\n  \"image\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/recipes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"recipes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"id\": 47,\n    \"title\": \"Mushroom Risotto\",\n    \"description\": \"Creamy risotto with sautéed mushrooms and Parmesan cheese.\",\n    \"ingredients\": \"Arborio rice, Mushrooms, Onion, Garlic, Vegetable broth, White wine, Parmesan cheese, Butter, Olive oil, Salt, Black pepper\",\n    \"steps\": \"1. Sauté onions and garlic in olive oil. 2. Add mushrooms and cook until tender. 3. Stir in Arborio rice and cook for a few minutes. 4. Deglaze with white wine. 5. Gradually add vegetable broth, stirring constantly, until rice is creamy and cooked through. 6. Stir in Parmesan cheese and butter. Season with salt and pepper.\",\n    \"image\": null,\n    \"created_at\": \"2024-08-13T17:53:50.000Z\",\n    \"updated_at\": \"2024-08-13T17:53:50.000Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "updateRecipe",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 5,\n    \"title\": \"Vegetable Stir Fry\",\n    \"description\": \"Stir-fried vegetables in a savory sauce served over rice.\",\n    \"ingredients\": \"Bell peppers, Broccoli, Carrots, Tofu, Soy sauce, Garlic, Ginger, Rice\",\n    \"steps\": \"1. Cook rice. 2. Stir-fry vegetables with garlic and ginger. 3. Add soy sauce and cook until vegetables are tender. 4. Serve over rice.\",\n    \"image\": null\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/recipes/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"recipes",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "updateRecipe",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 5,\n    \"title\": \"Vegetable Stir Fry\",\n    \"description\": \"Stir-fried vegetables in a savory sauce served over rice.\",\n    \"ingredients\": \"Bell peppers, Broccoli, Carrots, Tofu, Soy sauce, Garlic, Ginger, Rice\",\n    \"steps\": \"1. Cook rice. 2. Stir-fry vegetables with garlic and ginger. 3. Add soy sauce and cook until vegetables are tender. 4. Serve over rice.\",\n    \"image\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/recipes/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"recipes",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"title\": \"Vegetable Stir Fry\",\n    \"description\": \"Stir-fried vegetables in a savory sauce served over rice.\",\n    \"ingredients\": \"Bell peppers, Broccoli, Carrots, Tofu, Soy sauce, Garlic, Ginger, Rice\",\n    \"steps\": \"1. Cook rice. 2. Stir-fry vegetables with garlic and ginger. 3. Add soy sauce and cook until vegetables are tender. 4. Serve over rice.\",\n    \"image\": null,\n    \"created_at\": \"2024-08-11T15:00:00.000Z\",\n    \"updated_at\": \"2024-08-13T19:57:44.000Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/recipes/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"recipes",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
